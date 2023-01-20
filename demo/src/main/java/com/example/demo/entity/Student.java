@@ -1,9 +1,10 @@
-package entity;
+package com.example.demo.entity;
 
+import com.example.demo.dto.StudentDTO;
 import jakarta.persistence.*;
 
 @Entity
-public class Estudiante {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
@@ -15,14 +16,22 @@ public class Estudiante {
     private int edad;
     private String materia;
 
-    public Estudiante(String nombre, String apellidos, int cedula, int edad, String materia) {
+    public Student(String nombre, String apellidos, int cedula, int edad, String materia) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         Cedula = cedula;
         this.edad = edad;
         this.materia = materia;
     }
-    public Estudiante() {
+    public Student() {
+    }
+
+    public Student(StudentDTO student) {
+        this.nombre = student.getNombre();
+        this.apellidos = student.getApellidos();
+        Cedula = student.getCedula();
+        this.edad = student.getEdad();
+        this.materia = student.getMateria();
     }
 
     public String getNombre() {
