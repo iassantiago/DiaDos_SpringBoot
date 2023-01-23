@@ -11,5 +11,5 @@ public interface IStudentService {
 
     ArrayList<StudentDTO> getAll();
 
-    void delete();
+    void delete(Integer id);
 }
