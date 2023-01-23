@@ -1,20 +1,19 @@
 package com.example.demo.dto;
 
-import com.example.demo.entity.Student;
 import com.example.demo.entity.Teacher;
 
 public class TeacherDTO {
 
     private Integer id;
-    private String nombre;
+    private String nombres;
     private String apellidos;
     private int cedula;
     private int edad;
     private String materia;
 
-    public TeacherDTO(Integer id, String nombre, String apellidos, int cedula, int edad, String materia) {
+    public TeacherDTO(Integer id, String nombres, String apellidos, int cedula, int edad, String materia) {
         this.id = id;
-        this.nombre = nombre;
+        this.nombres = nombres;
         this.apellidos = apellidos;
         this.cedula = cedula;
         this.edad = edad;
@@ -26,7 +25,7 @@ public class TeacherDTO {
 
     public TeacherDTO(Teacher teacher) {
         this.id = teacher.getId();
-        this.nombre = teacher.getNombre();
+        this.nombres = teacher.getNombres();
         this.apellidos = teacher.getApellidos();
         this.cedula = teacher.getCedula();
         this.edad = teacher.getEdad();
@@ -42,12 +41,12 @@ public class TeacherDTO {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
