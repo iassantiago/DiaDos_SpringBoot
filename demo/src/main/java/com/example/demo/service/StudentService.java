@@ -24,17 +24,21 @@ public class StudentService implements IStudentService{
 
     @Override
     public void update(StudentDTO student) {
-
+        if(this.IStudentRepository.existsById(student.getId())){
+            this.IStudentRepository.save(new Student(student));
+        }
     }
 
     @Override
     public ArrayList<StudentDTO> getAll() {
         List<Student> list = (List<Student>) this.IStudentRepository.findAll();
-        return (ArrayList<StudentDTO>) list.stream().map(StudentDTO::new).collect(Collectors.toList());
+        return (ArrayList<StudentDTO>) list.stream()
+                .map(StudentDTO::new)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public void delete() {
-
+    public void delete(Integer id) {
+        IStudentRepository.delete(IStudentRepository.findById(id).orElseThrow());
     }
 }
