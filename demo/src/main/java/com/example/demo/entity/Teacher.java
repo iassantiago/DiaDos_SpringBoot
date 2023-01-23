@@ -9,15 +9,15 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
     private Integer id;
-    private String nombre;
+    private String nombres;
     private String apellidos;
     private int cedula;
     private int edad;
     private String materia;
 
-    public Teacher(Integer id, String nombre, String apellidos, int cedula, int edad, String materia) {
+    public Teacher(Integer id, String nombres, String apellidos, int cedula, int edad, String materia) {
         this.id = id;
-        this.nombre = nombre;
+        this.nombres = nombres;
         this.apellidos = apellidos;
         this.cedula = cedula;
         this.edad = edad;
@@ -27,7 +27,7 @@ public class Teacher {
     public Teacher(){}
 
     public Teacher(TeacherDTO teacher) {
-        this.nombre = teacher.getNombre();
+        this.nombres = teacher.getNombres();
         this.apellidos = teacher.getApellidos();
         this.cedula = teacher.getCedula();
         this.edad = teacher.getEdad();
@@ -42,12 +42,12 @@ public class Teacher {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {

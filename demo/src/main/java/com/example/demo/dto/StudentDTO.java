@@ -2,20 +2,21 @@ package com.example.demo.dto;
 
 import com.example.demo.entity.Student;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class StudentDTO {
     private Integer id;
-    private  String nombre;
-    private  String apellidos;
-    private Date birthdate;
+    private String nombres;
+    private String apellidos;
+    private LocalDate birthdate;
     private int cedula;
     private int edad;
     private String materia;
 
-    public StudentDTO(Integer id,String nombre, String apellidos,Date birthdate, int cedula, int edad, String materia) {
+    public StudentDTO(Integer id, String nombres, String apellidos, LocalDate birthdate, int cedula, int edad, String materia) {
         this.id = id;
-        this.nombre = nombre;
+        this.nombres = nombres;
         this.apellidos = apellidos;
         this.birthdate= birthdate;
         this.cedula = cedula;
@@ -27,7 +28,7 @@ public class StudentDTO {
     }
     public StudentDTO(Student student) {
         this.id = student.getId();
-        this.nombre = student.getNombre();
+        this.nombres = student.getNombres();
         this.apellidos = student.getApellidos();
         this.birthdate=student.getBirthdate();
         this.cedula = student.getCedula();
@@ -42,12 +43,12 @@ public class StudentDTO {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
@@ -58,10 +59,10 @@ public class StudentDTO {
         this.apellidos = apellidos;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
     public int getCedula() {
